@@ -168,6 +168,110 @@ function buildProfileModal() {
     });
 }
 
+function buildAccountPopup() {
+    const modal = document.getElementById("accountPickerModal");
+    if (!modal) {
+        return;
+    }
+
+    const accountList = document.getElementById("accountList");
+    if (!accountList) {
+        return;
+    }
+
+    accountList.innerHTML = "";
+    const users = getSavedUsers();
+    if (users.length === 0) {
+        accountList.innerHTML = "<p class='account-popup-text'>No saved accounts yet. Create a new account.</p>";
+        return;
+    }
+
+    users.forEach(function(user) {
+        const entry = document.createElement("div");
+        entry.className = "account-entry";
+        entry.innerHTML = `
+            <div class="account-entry-heading">${user.name || user.email}</div>
+            <div class="account-entry-text">Email: ${user.email}</div>
+            <div class="account-entry-text">Password: ${user.password}</div>
+        `;
+        entry.addEventListener("click", function() {
+            const emailInput = document.getElementById("loginEmail");
+            const passwordInput = document.getElementById("loginPassword");
+            emailInput.value = user.email;
+            passwordInput.value = user.password;
+            hideAccountPopup();
+            loginWithCredentials(user.email, user.password);
+        });
+        accountList.appendChild(entry);
+    });
+
+    const closeButton = document.getElementById("closeAccountPopup");
+    if (closeButton) {
+        closeButton.addEventListener("click", hideAccountPopup);
+    }
+}
+
+function showAccountPopupIfNeeded() {
+    if (getCurrentPage() !== "login.html") {
+        return;
+    }
+
+    const users = getSavedUsers();
+    if (users.length === 0) {
+        return;
+    }
+
+    const modal = document.getElementById("accountPickerModal");
+    if (modal) {
+        buildAccountPopup();
+        modal.style.display = "flex";
+    }
+}
+
+function hideAccountPopup() {
+    const modal = document.getElementById("accountPickerModal");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+function loginWithCredentials(emailValue, passwordValue) {
+    const emailError = document.getElementById("loginEmailError");
+    const passwordError = document.getElementById("loginPasswordError");
+    emailError.innerText = "";
+    passwordError.innerText = "";
+
+    let isValid = true;
+    if (!emailValue.trim()) {
+        emailError.innerText = "Please enter email";
+        isValid = false;
+    }
+
+    if (!passwordValue.trim()) {
+        passwordError.innerText = "Please enter password";
+        isValid = false;
+    }
+
+    if (isValid) {
+        const storedUser = getUserByEmail(emailValue);
+        if (!storedUser) {
+            emailError.innerText = "No account found";
+            isValid = false;
+        } else if (storedUser.password !== passwordValue) {
+            passwordError.innerText = "Incorrect password";
+            isValid = false;
+        }
+    }
+
+    if (isValid) {
+        setLoggedInUser(emailValue);
+        setTimeout(function() {
+            alert("🎉 Login Successful!");
+            redirectTo("home.html");
+        }, 100);
+    }
+}
+
 function fillProfileView() {
     const user = getCurrentUser();
     if (!user) {
@@ -271,6 +375,7 @@ document.addEventListener("DOMContentLoaded", function() {
     updateAuthButtons();
     setupLogoutButton();
     buildProfileModal();
+    showAccountPopupIfNeeded();
 
     const profileBtn = document.getElementById("profileBtn");
     if (profileBtn) {
@@ -302,40 +407,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const email = document.getElementById("loginEmail");
             const password = document.getElementById("loginPassword");
-            const emailError = document.getElementById("loginEmailError");
-            const passwordError = document.getElementById("loginPasswordError");
 
-            emailError.innerText = "";
-            passwordError.innerText = "";
-
-            let isValid = true;
-
-            if (!email.value.trim()) {
-                emailError.innerText = "Please enter email";
-                isValid = false;
-            }
-
-            if (!password.value.trim()) {
-                passwordError.innerText = "Please enter password";
-                isValid = false;
-            }
-
-            if (isValid) {
-                const storedUser = getUserByEmail(email.value);
-                if (!storedUser) {
-                    emailError.innerText = "No account found";
-                    isValid = false;
-                } else if (storedUser.password !== password.value) {
-                    passwordError.innerText = "Incorrect password";
-                    isValid = false;
-                }
-            }
-
-            if (isValid) {
-                setLoggedInUser(email.value);
-                alert("🎉 Login Successful!");
-                redirectTo("home.html");
-            }
+            loginWithCredentials(email.value, password.value);
         });
     }
 
