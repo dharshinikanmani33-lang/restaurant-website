@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Signup Page</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+    href="css/style.css">
+
+    <!-- GOOGLE FONT -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- SIGNUP CONTAINER -->
+
+<div class="signup-container">
+
+    <!-- LEFT IMAGE -->
+
+    <div class="signup-left">
+
+        <img src="image/bigimg.png"
+        alt="food image">
+
+    </div>
+
+    <!-- RIGHT FORM -->
+
+    <div class="signup-right">
+
+        <!-- TITLE -->
+
+        <h1>
+            Welcome to Taste of India
+        </h1>
+
+        <p class="signup-subtitle">
+
+            Create your food account
+
+        </p>
+
+        <!-- SOCIAL LOGIN -->
+
+        <div class="social-login">
+
+            <button class="google-btn">
+
+                <i class="fa-brands fa-google"></i>
+
+                Continue with Google
+
+            </button>
+
+            <button class="facebook-btn">
+
+                <i class="fa-brands fa-facebook-f"></i>
+
+                Continue with Facebook
+
+            </button>
+
+        </div>
+
+        <!-- FORM -->
+
+        <form id="signupForm">
+
+            <!-- NAME -->
+
+            <label>
+                Name
+            </label>
+
+            <input type="text"
+
+            id="signupName"
+
+            placeholder="Enter your full name">
+
+            <small id="signupNameError"></small>
+
+            <!-- MOBILE -->
+
+            <label>
+                Mobile number
+            </label>
+
+            <input type="text"
+
+            id="signupMobile"
+
+            placeholder="Enter your phone number">
+
+            <small id="signupMobileError"></small>
+
+            <!-- EMAIL -->
+
+            <label>
+                Email
+            </label>
+
+            <input type="email"
+
+            id="signupEmail"
+
+            placeholder="Please enter your email address">
+
+            <small id="signupEmailError"></small>
+
+            <!-- PASSWORD -->
+
+            <label>
+                Password
+            </label>
+
+            <input type="password"
+
+            id="signupPassword"
+
+            placeholder="Please enter your password">
+
+            <small id="signupPasswordError"></small>
+
+            <!-- CONFIRM PASSWORD -->
+
+            <label>
+                Confirm Password
+            </label>
+
+            <input type="password"
+
+            id="confirmPassword"
+
+            placeholder="Please enter Confirm password">
+
+            <small id="confirmPasswordError"></small>
+
+            <!-- BUTTON -->
+
+            <button type="submit"
+
+            class="signup-main-btn"
+
+            id="signupBtn">
+
+                Sign up
+
+            </button>
+
+            <!-- LOGIN -->
+
+            <p class="login-link">
+
+                Already have an account?
+
+                <span id="loginNow">
+
+                    Login
+
+                </span>
+
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="main-footer">
+
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+
+        <div class="footer-col">
+
+            <div class="footer-logo">
+
+                <img src="image/logo.png"
+                alt="logo">
+
+                <h2>
+                    Taste of India
+                </h2>
+
+            </div>
+
+            <p class="footer-text">
+
+                Experience the authentic taste
+                of India with rich spices,
+                traditional recipes, and
+                unforgettable flavors served
+                fresh every day.
+
+            </p>
+
+            <!-- SOCIAL ICONS -->
+
+            <div class="footer-social">
+
+                <i class="fa-brands fa-twitter"></i>
+
+                <i class="fa-brands fa-facebook-f"></i>
+
+                <i class="fa-brands fa-instagram"></i>
+
+                <i class="fa-brands fa-pinterest-p"></i>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 2 -->
+
+        <div class="footer-col">
+
+            <h3>
+                Pages
+            </h3>
+
+            <ul>
+
+                <li><a href="home.html">Home</a></li>
+
+                <li><a href="about.html">About Us</a></li>
+
+                <li><a href="menu.html">Menu</a></li>
+
+                <li><a href="menu.html">Food Details</a></li>
+
+                <li><a href="checkout.html">Cart</a></li>
+
+                <li><a href="checkout.html">Checkout</a></li>
+
+                <li><a href="login.html">Login</a></li>
+
+                <li><a href="signup.html">Signup</a></li>
+
+                <li><a href="contact.html">Contact Us</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 3 -->
+
+        <div class="footer-col">
+
+            <h3>
+                Our Services
+            </h3>
+
+            <ul>
+
+                <li>Online Food Ordering</li>
+
+                <li>Table Reservation</li>
+
+                <li>Family Combo Meals</li>
+
+                <li>Chef Special Menus</li>
+
+                <li>Festival Offers</li>
+
+                <li>Dine-In Experience</li>
+
+                <li>Catering Services</li>
+
+                <li>Party Orders</li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 4 -->
+
+        <div class="footer-col">
+
+            <h3>
+                Follow Us On Instagram
+            </h3>
+
+            <div class="insta-gallery">
+
+                <img src="image/food1.png">
+
+                <img src="image/food2.png">
+
+                <img src="image/food3.png">
+
+                <img src="image/food4.png">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- JS -->
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

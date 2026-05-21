@@ -1,0 +1,2368 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f5f5;
+}
+
+/* LOGIN CONTAINER */
+
+.login-container{
+    width:80%;
+    margin:50px auto;
+    display:flex;
+    background:white;
+}
+
+/* LEFT SIDE */
+
+.left-section{
+    width:50%;
+}
+
+.left-section img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* RIGHT SIDE */
+
+.right-section{
+    width:50%;
+    padding:50px;
+}
+
+/* LOGO */
+
+.logo-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.logo-box img{
+    width:45px;
+}
+
+.logo-box h1{
+    font-size:40px;
+    font-style:italic;
+    color:#4b2d1f;
+}
+
+/* LOGIN HEADING */
+
+.right-section h2{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:gray;
+    margin-bottom:30px;
+}
+
+/* FORM */
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    margin:10px 0;
+    font-weight:500;
+}
+
+input{
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    margin-bottom:20px;
+}
+
+button{
+    padding:15px;
+    border:none;
+    background:#3559ff;
+    color:white;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.forgot{
+    text-align:right;
+    margin-top:15px;
+    color:gray;
+    font-size:14px;
+}
+
+/* SIGNUP BOX */
+
+.signup-box{
+    border:1px solid #eee;
+    margin-top:40px;
+    padding:30px;
+}
+
+.signup-box h3{
+    margin-bottom:15px;
+}
+
+.signup-box p{
+    color:gray;
+    margin-bottom:20px;
+}
+
+.signup-btn{
+    background:#11c5d9;
+}
+
+/* FOOTER */
+
+footer{
+    background:#444;
+    color:white;
+    padding:70px 10%;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+}
+
+/* FOOTER LOGO */
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.footer-logo img{
+    width:40px;
+}
+
+.footer-col p{
+    color:#ddd;
+    line-height:1.8;
+}
+
+.footer-col h3{
+    margin-bottom:20px;
+}
+
+.footer-col ul{
+    list-style:none;
+}
+
+.footer-col ul li{
+    margin-bottom:12px;
+    color:#ddd;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+    margin-top:20px;
+}
+
+.social-icons i{
+    width:35px;
+    height:35px;
+    background:#e74c3c;
+    color:white;
+    border-radius:50%;
+    text-align:center;
+    line-height:35px;
+    margin-right:10px;
+    cursor:pointer;
+}
+
+/* INSTAGRAM IMAGES */
+
+.insta-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.insta-gallery img{
+    width:100%;
+    height:100px;
+    object-fit:cover;
+}
+
+/* SIGNUP PAGE */
+
+.signup-container{
+    width:80%;
+    margin:50px auto;
+    display:flex;
+    background:white;
+}
+
+.signup-left{
+    width:50%;
+}
+
+.signup-left img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.signup-right{
+    width:50%;
+    padding:60px;
+}
+
+.signup-right h1{
+    font-size:42px;
+    color:#4b3b36;
+    margin-bottom:10px;
+}
+
+.signup-subtitle{
+    color:gray;
+    margin-bottom:30px;
+}
+
+/* SOCIAL LOGIN */
+
+.social-login{
+    display:flex;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.google-btn,
+.facebook-btn{
+    background:white;
+    border:1px solid #ddd;
+    padding:12px;
+    color:#555;
+    font-size:14px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.google-btn i{
+    color:red;
+    margin-right:8px;
+}
+
+.facebook-btn i{
+    color:#1877f2;
+    margin-right:8px;
+}
+
+/* SIGNUP BUTTON */
+
+.signup-main-btn{
+    background:#b8865d;
+    padding:15px;
+    border:none;
+    color:white;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    width:180px;
+    margin:auto;
+}
+
+.login-link{
+    text-align:center;
+    margin-top:20px;
+}
+
+#loginNow{
+    color:#b8865d;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .login-container,
+    .signup-container{
+        flex-direction:column;
+        width:95%;
+    }
+
+    .left-section,
+    .right-section,
+    .signup-left,
+    .signup-right{
+        width:100%;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+    .right-section,
+    .signup-right{
+        padding:30px;
+    }
+
+    .logo-box h1{
+        font-size:28px;
+    }
+
+    .right-section h2{
+        font-size:36px;
+    }
+
+    .signup-right h1{
+        font-size:30px;
+    }
+
+    .social-login{
+        flex-direction:column;
+    }
+
+}
+
+/* ======================================================
+   HOME PAGE
+====================================================== */
+
+/* TOP BAR */
+
+.top-bar{
+    background:#4a4a4a;
+    color:white;
+    height:35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 80px;
+    font-size:13px;
+}
+
+.top-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.top-right{
+    display:flex;
+    gap:12px;
+}
+
+.top-right i{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:#666;
+    text-align:center;
+    line-height:28px;
+    cursor:pointer;
+    font-size:12px;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 80px;
+}
+
+/* NAV LOGO */
+
+.nav-logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.nav-logo img{
+    width:55px;
+}
+
+.nav-logo h1{
+    font-size:52px;
+    font-style:italic;
+    font-family:serif;
+    color:#444;
+    font-weight:500;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-links li{
+    cursor:pointer;
+    font-size:15px;
+}
+
+.active{
+    background:#d9dcc8;
+    padding:8px 18px;
+    border-radius:20px;
+}
+
+/* TABLE BUTTON */
+
+.table-btn{
+    background:white;
+    color:black;
+    border:2px solid black;
+    padding:13px 25px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+/* HERO SECTION */
+
+.hero{
+    position:relative;
+    width:100%;
+    height:620px;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:90px;
+    font-family:serif;
+    line-height:1;
+    color:#2d2b22;
+    font-weight:500;
+}
+
+.hero-content p{
+    margin-top:18px;
+    font-size:18px;
+    color:#444;
+}
+
+/* HERO BUTTONS */
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.book-btn,
+.explore-btn{
+    padding:15px 30px;
+    border-radius:30px;
+    border:2px solid #333;
+    background:#f5dede;
+    color:#333;
+    font-weight:600;
+}
+
+/* ======================================================
+   FOOD SECTIONS
+====================================================== */
+
+.food-section{
+    width:90%;
+    margin:80px auto;
+    text-align:center;
+}
+
+.food-section h2{
+    font-size:42px;
+    margin-bottom:40px;
+    font-family:serif;
+    color:#3b2c1f;
+}
+
+/* FOOD GRID */
+
+.food-grid{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+/* FOOD CARD */
+
+.food-card{
+    width:240px;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:12px;
+}
+
+.food-card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:4px;
+}
+
+.food-card h3{
+    margin-top:10px;
+    font-size:15px;
+}
+
+.food-card p{
+    margin-top:8px;
+    font-size:11px;
+    line-height:1.5;
+    color:#666;
+}
+
+.food-card h4{
+    margin-top:10px;
+    color:#b97745;
+}
+
+/* ADD CART BUTTON */
+
+.cart-btn{
+    margin-top:10px;
+    background:#d98b5a;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    font-size:11px;
+    border-radius:3px;
+}
+
+/* ======================================================
+   FAMOUS DISHES
+====================================================== */
+
+.famous-section{
+    width:90%;
+    margin:80px auto;
+    background:#fff5f5;
+    padding:50px 20px;
+    text-align:center;
+}
+
+.famous-section h2{
+    font-size:42px;
+    margin-bottom:40px;
+    font-family:serif;
+    color:#3b2c1f;
+}
+
+.famous-grid{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+
+/* DIAGONAL */
+
+.top-card{
+    margin-top:0;
+}
+
+.middle-card{
+    margin-top:70px;
+}
+
+/* ======================================================
+   DEAL SECTION
+====================================================== */
+
+.deal-section{
+    width:90%;
+    margin:80px auto;
+}
+
+.deal-section h2{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:40px;
+    font-family:serif;
+    color:#3b2c1f;
+}
+
+.deal-grid{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+/* DEAL CARD */
+
+.deal-card{
+    width:520px;
+    background:white;
+    border:1px solid #ddd;
+    padding:15px;
+    display:flex;
+    gap:15px;
+}
+
+.deal-card img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+}
+
+.deal-content h3{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.deal-content p{
+    font-size:12px;
+    line-height:1.5;
+    margin-bottom:10px;
+}
+
+.deal-content ul{
+    margin-left:18px;
+}
+
+.deal-content ul li{
+    font-size:12px;
+    margin-bottom:5px;
+}
+
+/* ======================================================
+   REVIEW SECTION
+====================================================== */
+
+.review-section{
+    width:90%;
+    margin:100px auto;
+}
+
+.review-section h2{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:40px;
+    font-family:serif;
+    color:#3b2c1f;
+}
+
+.review-grid{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.review-card{
+    width:320px;
+    background:#fff1eb;
+    padding:25px;
+}
+
+.review-card h3{
+    font-size:18px;
+    margin-bottom:15px;
+    color:#9a4f4f;
+}
+
+.review-card p{
+    font-size:13px;
+    line-height:1.7;
+    color:#555;
+    margin-bottom:20px;
+}
+
+.review-user{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.review-user img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:768px){
+
+    .login-container,
+    .signup-container{
+        width:95%;
+    }
+
+    .login-top,
+    .signup-top{
+        flex-direction:column;
+    }
+
+    .left-section,
+    .right-section,
+    .signup-left,
+    .signup-right{
+        width:100%;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+    .right-section,
+    .signup-right{
+        padding:30px;
+    }
+
+    .logo-box h1{
+        font-size:28px;
+    }
+
+    .right-section h2{
+        font-size:36px;
+    }
+
+    .signup-right h1{
+        font-size:30px;
+    }
+
+    .social-login{
+        flex-direction:column;
+    }
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .food-grid,
+    .famous-grid,
+    .deal-grid,
+    .review-grid{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .deal-card{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .hero-content h1{
+        font-size:50px;
+    }
+
+}
+/* MENU PAGE */
+
+.menu-section{
+
+    padding: 60px 10%;
+    background: #f8f8f8;
+
+}
+
+.menu-title{
+
+    font-size: 42px;
+    margin-bottom: 40px;
+    font-family: serif;
+    color: #222;
+
+}
+
+.menu-container{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+}
+
+.menu-card{
+
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+    padding-bottom: 20px;
+    text-align: center;
+
+}
+
+.menu-card:hover{
+
+    transform: translateY(-5px);
+
+}
+
+.menu-card img{
+
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+
+}
+
+.menu-card h3{
+
+    margin-top: 15px;
+    font-size: 18px;
+    color: #222;
+
+}
+
+.menu-card p{
+
+    color: #d35400;
+    margin: 10px 0;
+    font-weight: 600;
+
+}
+
+.menu-card button{
+
+    border: none;
+    background: #c0392b;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.menu-card button:hover{
+
+    background: #922b21;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px){
+
+    .menu-container{
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media(max-width: 600px){
+
+    .menu-container{
+
+        grid-template-columns: 1fr;
+
+    }
+
+}0
+/* HEADER */
+
+.header{
+
+    width: 100%;
+
+}
+
+/* TOP BAR */
+
+.top-bar{
+
+    background: #444;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10%;
+
+}
+
+.top-bar p{
+
+    font-size: 12px;
+
+}
+
+.top-icons i{
+
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 12px;
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: white;
+
+}
+
+/* LOGO */
+
+.logo{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.logo img{
+
+    width: 45px;
+
+}
+
+.logo h1{
+
+    font-size: 28px;
+    font-family: serif;
+    color: #333;
+
+}
+
+/* NAV LINKS */
+
+.nav-links{
+
+    display: flex;
+    gap: 30px;
+    list-style: none;
+
+}
+
+.nav-links a{
+
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: 0.3s;
+
+}
+
+.nav-links a:hover{
+
+    color: #c0392b;
+
+}
+
+/* ACTIVE MENU */
+
+.active{
+
+    background: #dfe8d6;
+    padding: 8px 15px;
+    border-radius: 20px;
+
+}
+/* FOOTER */
+
+.footer{
+
+    background: #4a4a4a;
+    padding: 70px 10%;
+    color: white;
+
+}
+
+.footer-container{
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+
+}
+
+/* FOOTER LOGO */
+
+.footer-logo{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+}
+
+.footer-logo img{
+
+    width: 40px;
+
+}
+
+.footer-logo h2{
+
+    font-size: 24px;
+    font-family: serif;
+
+}
+
+/* FOOTER TEXT */
+
+.footer-col p{
+
+    font-size: 14px;
+    line-height: 1.8;
+    color: #ddd;
+
+}
+
+/* SOCIAL ICONS */
+
+.footer-social{
+
+    margin-top: 20px;
+
+}
+
+.footer-social i{
+
+    width: 35px;
+    height: 35px;
+    background: #c0392b;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.footer-social i:hover{
+
+    background: white;
+    color: #c0392b;
+
+}
+
+/* FOOTER TITLES */
+
+.footer-col h3{
+
+    margin-bottom: 20px;
+    font-size: 18px;
+
+}
+
+/* FOOTER LIST */
+
+.footer-col ul{
+
+    list-style: none;
+
+}
+
+.footer-col ul li{
+
+    margin-bottom: 12px;
+    color: #ddd;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.footer-col ul li:hover{
+
+    color: #c0392b;
+
+}
+
+/* FOOTER GALLERY */
+
+.footer-gallery{
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+}
+
+.footer-gallery img{
+
+    width: 100%;
+    border-radius: 5px;
+    height: 90px;
+    object-fit: cover;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px){
+
+    .footer-container{
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media(max-width: 600px){
+
+    .footer-container{
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+/* =========================================
+   CHECKOUT PAGE
+========================================= */
+
+.checkout-section{
+
+    width:90%;
+    margin:80px auto;
+    display:flex;
+    gap:50px;
+    align-items:flex-start;
+
+}
+
+/* LEFT SIDE */
+
+.checkout-left{
+
+    width:65%;
+
+}
+
+.checkout-left h2{
+
+    font-size:70px;
+    font-family:serif;
+    color:#3b2c1f;
+    margin-bottom:50px;
+
+}
+
+/* BOX */
+
+.checkout-box{
+
+    margin-bottom:60px;
+
+}
+
+.checkout-box h3{
+
+    font-size:26px;
+    margin-bottom:25px;
+    color:#222;
+
+}
+
+/* INPUT GRID */
+
+.input-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+
+}
+
+/* INPUTS */
+
+.input-grid input{
+
+    padding:18px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+    font-size:16px;
+    background:white;
+
+}
+
+.input-grid input:focus{
+
+    border-color:#d98b5a;
+
+}
+
+/* PAYMENT */
+
+.payment-section{
+
+    margin-top:70px;
+
+}
+
+.payment-section h2{
+
+    font-size:55px;
+    font-family:serif;
+    margin-bottom:35px;
+    color:#3b2c1f;
+
+}
+
+/* PAYMENT ICONS */
+
+.payment-icons{
+
+    display:flex;
+    gap:20px;
+    margin-bottom:35px;
+
+}
+
+.payment-card{
+
+    width:75px;
+    height:50px;
+    border-radius:8px;
+    border:1px solid #ddd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    background:white;
+
+}
+
+.mastercard{
+
+    color:#f39c12;
+
+}
+
+.visa{
+
+    color:#1e3799;
+
+}
+
+.paypal{
+
+    color:#0984e3;
+
+}
+
+.apple{
+
+    color:black;
+
+}
+
+/* SAVE CARD */
+
+.save-card{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:25px;
+
+}
+
+.save-card p{
+
+    font-size:15px;
+    color:#666;
+
+}
+
+/* RIGHT SIDE */
+
+.checkout-right{
+
+    width:35%;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.08);
+
+}
+
+.checkout-right h3{
+
+    font-size:28px;
+    margin-bottom:35px;
+    color:#222;
+
+}
+
+/* SUMMARY */
+
+.summary-item{
+
+    display:flex;
+    justify-content:space-between;
+    margin:22px 0;
+    font-size:20px;
+
+}
+
+.summary-item p{
+
+    color:#444;
+
+}
+
+.summary-item span{
+
+    font-weight:600;
+    color:black;
+
+}
+
+/* TOTAL */
+
+.total{
+
+    font-size:28px;
+    font-weight:700;
+
+}
+
+/* CART SUMMARY */
+
+.cart-summary-item{
+
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid #ddd;
+
+}
+
+.cart-summary-item img{
+
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:10px;
+
+}
+
+.cart-summary-item h4{
+
+    font-size:20px;
+    margin-bottom:10px;
+
+}
+
+.cart-summary-item p{
+
+    color:#d35400;
+    font-weight:600;
+
+}
+
+/* PLACE ORDER */
+
+.place-order-box{
+
+    text-align:center;
+    margin:70px 0;
+
+}
+
+.place-order-btn{
+
+    background:#f2b400;
+    color:black;
+    border:none;
+    padding:18px 50px;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+
+.place-order-btn:hover{
+
+    background:#d89d00;
+
+}
+
+.place-order-box p{
+
+    margin-top:18px;
+    color:#555;
+    font-size:16px;
+
+}
+
+/* =========================================
+   FINAL FOOTER
+========================================= */
+
+.main-footer{
+
+    background:#4a4a4a;
+    padding:90px 8%;
+    color:white;
+    margin-top:80px;
+
+}
+
+.main-footer .footer-container{
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1.2fr;
+    gap:70px;
+
+}
+
+/* FOOTER LOGO */
+
+.main-footer .footer-logo{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:30px;
+
+}
+
+.main-footer .footer-logo img{
+
+    width:55px;
+
+}
+
+.main-footer .footer-logo h2{
+
+    font-size:42px;
+    font-family:serif;
+    font-style:italic;
+    font-weight:500;
+    color:white;
+
+}
+
+/* FOOTER TEXT */
+
+.main-footer .footer-text{
+
+    color:#eee;
+    line-height:2;
+    font-size:16px;
+    margin-bottom:35px;
+
+}
+
+/* SOCIAL */
+
+.footer-social{
+
+    display:flex;
+    gap:15px;
+
+}
+
+.footer-social i{
+
+    width:45px;
+    height:45px;
+    background:#e75b68;
+    border-radius:50%;
+    text-align:center;
+    line-height:45px;
+    font-size:18px;
+    cursor:pointer;
+
+}
+
+/* TITLES */
+
+.main-footer .footer-col h3{
+
+    font-size:22px;
+    margin-bottom:30px;
+
+}
+
+/* LINKS */
+
+.main-footer .footer-col ul{
+
+    list-style:none;
+
+}
+
+.main-footer .footer-col ul li{
+
+    margin-bottom:18px;
+    color:#eee;
+    font-size:16px;
+
+}
+
+/* GALLERY */
+
+.insta-gallery{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+
+}
+
+.insta-gallery img{
+
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    border-radius:8px;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .checkout-section{
+
+        flex-direction:column;
+
+    }
+
+    .checkout-left,
+    .checkout-right{
+
+        width:100%;
+
+    }
+
+    .main-footer .footer-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .input-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .main-footer .footer-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* =========================================
+   FOOTER POSITION FIX
+========================================= */
+
+.main-footer{
+
+    width:100%;
+    clear:both;
+    display:block;
+    margin-top:100px;
+
+}
+
+/* CHECKOUT LAYOUT FIX */
+
+.checkout-section{
+
+    width:90%;
+    margin:80px auto;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:50px;
+    flex-wrap:wrap;
+
+}
+
+/* LEFT SIDE */
+
+.checkout-left{
+
+    flex:1;
+
+}
+
+/* RIGHT SIDE */
+
+.checkout-right{
+
+    width:350px;
+    flex-shrink:0;
+
+}
+
+/* PLACE ORDER */
+
+.place-order-box{
+
+    width:100%;
+    text-align:center;
+    margin-top:50px;
+    margin-bottom:50px;
+
+}
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contact-section{
+
+    width:90%;
+    margin:80px auto;
+
+}
+
+/* TITLE */
+
+.contact-section h1{
+
+    text-align:center;
+    font-size:60px;
+    margin-bottom:15px;
+
+}
+
+.contact-subtitle{
+
+    text-align:center;
+    font-size:18px;
+    color:#555;
+    margin-bottom:60px;
+
+}
+
+/* CONTAINER */
+
+.contact-container{
+
+    display:flex;
+    gap:60px;
+    align-items:center;
+
+}
+
+/* MAP */
+
+.contact-map{
+
+    width:55%;
+
+}
+
+.contact-map img{
+
+    width:100%;
+    border-radius:10px;
+
+}
+
+/* INFO BOX */
+
+.contact-info-box{
+
+    width:45%;
+
+}
+
+/* ITEMS */
+
+.contact-item{
+
+    display:flex;
+    gap:20px;
+    margin-bottom:40px;
+
+}
+
+.contact-item i{
+
+    font-size:28px;
+    color:#ff5a5f;
+    margin-top:8px;
+
+}
+
+.contact-item h3{
+
+    margin-bottom:10px;
+    font-size:28px;
+
+}
+
+.contact-item p{
+
+    font-size:18px;
+    color:#444;
+    line-height:1.8;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .contact-container{
+
+        flex-direction:column;
+
+    }
+
+    .contact-map,
+    .contact-info-box{
+
+        width:100%;
+
+    }
+
+}
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-section{
+
+    width:90%;
+    margin:80px auto;
+
+}
+
+/* TITLE */
+
+.about-section h1{
+
+    font-size:52px;
+    margin-bottom:40px;
+
+}
+
+/* TOP */
+
+.about-top{
+
+    display:flex;
+    gap:50px;
+    align-items:center;
+    margin-bottom:80px;
+
+}
+
+.about-left{
+
+    width:50%;
+
+}
+
+.about-left p{
+
+    line-height:2;
+    color:#444;
+    font-size:17px;
+
+}
+
+.about-right{
+
+    width:50%;
+
+}
+
+.about-right img{
+
+    width:100%;
+    border-radius:10px;
+
+}
+
+/* CONTENT */
+
+.about-content{
+
+    margin-bottom:70px;
+
+}
+
+.about-content h2{
+
+    margin-bottom:25px;
+    font-size:36px;
+
+}
+
+.about-content p{
+
+    line-height:2;
+    color:#555;
+    font-size:17px;
+
+}
+
+/* TEAM */
+
+.team-subtitle{
+
+    margin-bottom:40px;
+
+}
+
+.team-container{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+
+}
+
+.team-card{
+
+    text-align:center;
+    background:#fafafa;
+    padding:25px;
+    border-radius:10px;
+
+}
+
+.team-card img{
+
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:20px;
+
+}
+
+.team-card h3{
+
+    margin-bottom:10px;
+
+}
+
+.team-card h4{
+
+    color:#d35400;
+    margin-bottom:15px;
+
+}
+
+.team-card p{
+
+    font-size:15px;
+
+}
+
+/* WHY SECTION */
+
+.why-section{
+
+    display:flex;
+    gap:60px;
+    align-items:center;
+    margin-top:60px;
+
+}
+
+.why-left{
+
+    width:50%;
+
+}
+
+.why-left h2{
+
+    margin-bottom:30px;
+    font-size:38px;
+
+}
+
+.why-left ul{
+
+    padding-left:20px;
+
+}
+
+.why-left ul li{
+
+    margin-bottom:18px;
+    font-size:18px;
+
+}
+
+.why-right{
+
+    width:50%;
+
+}
+
+.why-right img{
+
+    width:100%;
+    border-radius:10px;
+
+}
+
+/* ENDING */
+
+.ending-text{
+
+    text-align:center;
+    margin-top:70px;
+    font-size:22px;
+    color:#444;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .about-top,
+    .why-section{
+
+        flex-direction:column;
+
+    }
+
+    .about-left,
+    .about-right,
+    .why-left,
+    .why-right{
+
+        width:100%;
+
+    }
+
+    .team-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* ========================================
+   FLOATING CHECKOUT BUTTON
+======================================== */
+
+.floating-checkout{
+
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    z-index:999;
+    display:none;
+
+}
+
+.floating-checkout button{
+
+    background:#ff5a5f;
+    color:white;
+    border:none;
+    padding:18px 30px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    transition:0.3s;
+
+}
+
+.floating-checkout button:hover{
+
+    background:#e0484d;
+    transform:scale(1.05);
+
+}
+/* ========================================
+   SUCCESS POPUP
+======================================== */
+
+.order-popup{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+
+}
+
+/* POPUP BOX */
+
+.popup-box{
+
+    width:420px;
+    background:white;
+    padding:50px 35px;
+    border-radius:20px;
+    text-align:center;
+    animation:popupShow 0.4s ease;
+
+}
+
+/* ANIMATION */
+
+@keyframes popupShow{
+
+    from{
+
+        transform:scale(0.7);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+        opacity:1;
+
+    }
+
+}
+
+/* TITLE */
+
+.popup-box h1{
+
+    font-size:34px;
+    margin-bottom:25px;
+    color:#ff5a5f;
+
+}
+
+/* TEXT */
+
+.popup-box p{
+
+    font-size:18px;
+    line-height:1.8;
+    color:#444;
+    margin-bottom:20px;
+
+}
+
+/* TOTAL */
+
+.popup-box h2{
+
+    font-size:45px;
+    color:#27ae60;
+    margin-bottom:25px;
+
+}
+
+/* BUTTON */
+
+.popup-box button{
+
+    background:#ff5a5f;
+    color:white;
+    border:none;
+    padding:16px 35px;
+    border-radius:50px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+
+.popup-box button:hover{
+
+    background:#e0484d;
+}
+/* ========================================
+   FINAL WEBSITE IMPROVEMENTS
+======================================== */
+
+/* NAV LINKS */
+
+.nav-links a{
+
+    text-decoration:none;
+    color:#333;
+    transition:0.3s;
+    font-weight:500;
+
+}
+
+.nav-links a:hover{
+
+    color:#d35400;
+
+}
+
+/* BUTTON HOVER */
+
+button{
+
+    transition:0.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* INPUT FOCUS */
+
+input:focus{
+
+    border-color:#d35400;
+    box-shadow:0 0 8px rgba(211,84,0,0.2);
+
+}
+
+/* ========================================
+   FORM VALIDATION
+======================================== */
+
+small{
+
+    color:red;
+    display:block;
+    margin-top:-12px;
+    margin-bottom:15px;
+    font-size:14px;
+
+}
+
+/* ERROR INPUT */
+
+.input-error{
+
+    border:2px solid red !important;
+
+}
+
+/* SUCCESS INPUT */
+
+.input-success{
+
+    border:2px solid #27ae60 !important;
+
+}
+
+/* ========================================
+   ACTIVE NAVBAR
+======================================== */
+
+.active{
+
+    background:#dfe8d6;
+    padding:8px 18px;
+    border-radius:20px;
+
+}
+
+/* ========================================
+   SMOOTH WEBSITE
+======================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ========================================
+   CART BUTTON EFFECT
+======================================== */
+
+.cart-btn{
+
+    transition:0.3s;
+
+}
+
+.cart-btn:hover{
+
+    background:#b85f2d;
+    transform:scale(1.05);
+
+}
+
+/* ========================================
+   FLOATING CHECKOUT
+======================================== */
+
+.floating-checkout button{
+
+    animation:floatButton 1.5s infinite;
+
+}
+
+@keyframes floatButton{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-5px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ========================================
+   PLACE ORDER BUTTON
+======================================== */
+
+.place-order-btn{
+
+    transition:0.3s;
+
+}
+
+.place-order-btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ========================================
+   POPUP BUTTON
+======================================== */
+
+.popup-box button:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ========================================
+   FOOTER HOVER
+======================================== */
+
+.footer-col ul li{
+
+    transition:0.3s;
+
+}
+
+.footer-col ul li:hover{
+
+    color:#ffb347;
+    cursor:pointer;
+
+}
+
+/* ========================================
+   SOCIAL ICONS HOVER
+======================================== */
+
+.footer-social i,
+.social-icons i{
+
+    transition:0.3s;
+
+}
+
+.footer-social i:hover,
+.social-icons i:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* ========================================
+   MENU CARD EFFECT
+======================================== */
+
+.menu-card,
+.food-card,
+.team-card,
+.review-card{
+
+    transition:0.3s;
+
+}
+
+.menu-card:hover,
+.food-card:hover,
+.team-card:hover,
+.review-card:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+
+}
+
+/* ========================================
+   RESPONSIVE FIXES
+======================================== */
+
+img{
+
+    max-width:100%;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}

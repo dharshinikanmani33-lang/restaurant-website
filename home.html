@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Home</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+    href="css/style.css">
+
+    <!-- GOOGLE FONT -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+
+    <div class="top-left">
+
+        <i class="fa-regular fa-envelope"></i>
+
+        yummy@tasteofindia
+
+    </div>
+
+    <div class="top-right">
+
+        <i class="fa-brands fa-twitter"></i>
+
+        <i class="fa-brands fa-facebook-f"></i>
+
+        <i class="fa-brands fa-instagram"></i>
+
+        <i class="fa-brands fa-github"></i>
+
+    </div>
+
+</div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <!-- LOGO -->
+
+    <div class="nav-logo">
+
+        <img src="image/logo.png">
+
+        <h1>
+            Taste of India
+        </h1>
+
+    </div>
+
+    <!-- NAV LINKS -->
+
+    <ul class="nav-links">
+
+        <!-- HOME -->
+
+        <li>
+
+            <a href="home.html"
+
+            id="homeBtn"
+
+            class="active">
+
+                Home
+
+            </a>
+
+        </li>
+
+        <!-- ABOUT -->
+
+        <li>
+
+            <a href="about.html"
+            id="aboutBtn">
+
+                About
+
+            </a>
+
+        </li>
+
+        <!-- MENU -->
+
+        <li>
+
+            <a href="menu.html"
+            id="menuBtn">
+
+                Menu
+
+            </a>
+
+        </li>
+
+        <!-- CONTACT -->
+
+        <li>
+
+            <a href="contact.html"
+            id="contactBtn">
+
+                Contact
+
+            </a>
+
+        </li>
+
+    </ul>
+
+    <!-- BOOK TABLE -->
+
+    <button id="bookTableBtn"
+    class="table-btn">
+
+        Book A Table
+
+    </button>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <img src="image/hero.png">
+
+    <div class="hero-content">
+
+        <h1>
+
+            Experience <br>
+
+            the True Taste <br>
+
+            of India
+
+        </h1>
+
+        <p>
+
+            Bringing the authentic flavors
+            of India to your table.
+
+        </p>
+
+        <!-- HERO BUTTONS -->
+
+        <div class="hero-buttons">
+
+            <!-- BOOK BUTTON -->
+
+            <button id="bookTableBtn"
+            class="book-btn">
+
+                Book A Table
+
+            </button>
+
+            <!-- EXPLORE BUTTON -->
+
+            <button id="exploreBtn"
+            class="explore-btn">
+
+                Explore Menu
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SIGNATURE DISHES -->
+
+<section class="food-section">
+
+    <h2>
+        Signature Dishes
+    </h2>
+
+    <div class="food-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="food-card">
+
+            <img src="image/dish1.png">
+
+            <h3>
+                Chettinad Chicken
+            </h3>
+
+            <p>
+
+                Traditional spicy chicken curry
+                made with authentic Indian spices.
+
+            </p>
+
+            <h4>
+                Price : ₹299
+            </h4>
+
+            <button class="cart-btn"
+
+            data-name="Chettinad Chicken"
+
+            data-price="299"
+
+            data-image="image/dish1.png">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="food-card">
+
+            <img src="image/dish2.png">
+
+            <h3>
+                Goan Fish Curry
+            </h3>
+
+            <p>
+
+                Traditional coconut fish curry
+                cooked with aromatic spices.
+
+            </p>
+
+            <h4>
+                Price : ₹249
+            </h4>
+
+            <button class="cart-btn"
+
+            data-name="Goan Fish Curry"
+
+            data-price="249"
+
+            data-image="image/dish2.png">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="food-card">
+
+            <img src="image/dish3.png">
+
+            <h3>
+                Rasam
+            </h3>
+
+            <p>
+
+                South Indian spicy soup with
+                pepper flavor and rich aroma.
+
+            </p>
+
+            <h4>
+                Price : ₹99
+            </h4>
+
+            <button class="cart-btn"
+
+            data-name="Rasam"
+
+            data-price="99"
+
+            data-image="image/dish3.png">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+        <!-- CARD 4 -->
+
+        <div class="food-card">
+
+            <img src="image/dish4.png">
+
+            <h3>
+                Awadhi Dum Pukht Biryani
+            </h3>
+
+            <p>
+
+                Fragrant rice cooked with rich
+                Indian spices and meat.
+
+            </p>
+
+            <h4>
+                Price : ₹349
+            </h4>
+
+            <button class="cart-btn"
+
+            data-name="Awadhi Dum Pukht Biryani"
+
+            data-price="349"
+
+            data-image="image/dish4.png">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FAMOUS DISHES -->
+
+<section class="famous-section">
+
+    <h2>
+        Famous Dishes
+    </h2>
+
+    <div class="famous-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="food-card">
+
+            <img src="image/famous1.png">
+
+            <h3>
+                Chicken Biryani
+            </h3>
+
+            <p>
+
+                Traditional dum biryani layered
+                with flavorful spices and chicken.
+
+            </p>
+
+            <h4>
+                Price : ₹499
+            </h4>
+
+            <button class="cart-btn"
+
+            data-name="Chicken Biryani"
+
+            data-price="499"
+
+            data-image="image/famous1.png">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="food-card">
+
+            <img src="image/famous2.png">
+
+            <h3>
+                Masala Dosa
+            </h3>
+
+            <p>
+
+                Crispy dosa stuffed with flavorful
+                potato masala.
+
+            </p>
+
+            <h4>
+                Price : ₹149
+            </h4>
+
+            <button class="cart-btn"
+
+            data-name="Masala Dosa"
+
+            data-price="149"
+
+            data-image="image/famous2.png">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="food-card">
+
+            <img src="image/famous3.png">
+
+            <h3>
+                Tandoori Chicken
+            </h3>
+
+            <p>
+
+                Smoky grilled chicken marinated
+                with authentic Indian spices.
+
+            </p>
+
+            <h4>
+                Price : ₹549
+            </h4>
+
+            <button class="cart-btn"
+
+            data-name="Tandoori Chicken"
+
+            data-price="549"
+
+            data-image="image/famous3.png">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+        <!-- CARD 4 -->
+
+        <div class="food-card">
+
+            <img src="image/famous4.png">
+
+            <h3>
+                Paneer Butter Masala
+            </h3>
+
+            <p>
+
+                Creamy butter curry cooked
+                with soft paneer cubes.
+
+            </p>
+
+            <h4>
+                Price : ₹379
+            </h4>
+
+            <button class="cart-btn"
+
+            data-name="Paneer Butter Masala"
+
+            data-price="379"
+
+            data-image="image/famous4.png">
+
+                Add To Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="main-footer">
+
+    <div class="footer-container">
+
+        <!-- COLUMN 1 -->
+
+        <div class="footer-col">
+
+            <div class="footer-logo">
+
+                <img src="image/logo.png">
+
+                <h2>
+                    Taste of India
+                </h2>
+
+            </div>
+
+            <p class="footer-text">
+
+                Experience the authentic taste
+                of India with rich spices,
+                traditional recipes, and
+                unforgettable flavors served
+                fresh every day.
+
+            </p>
+
+            <div class="footer-social">
+
+                <i class="fa-brands fa-twitter"></i>
+
+                <i class="fa-brands fa-facebook-f"></i>
+
+                <i class="fa-brands fa-instagram"></i>
+
+                <i class="fa-brands fa-pinterest-p"></i>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 2 -->
+
+        <div class="footer-col">
+
+            <h3>
+                Pages
+            </h3>
+
+            <ul>
+
+                <li><a href="home.html">Home</a></li>
+
+                <li><a href="about.html">About Us</a></li>
+
+                <li><a href="menu.html">Menu</a></li>
+
+                <li><a href="menu.html">Food Details</a></li>
+
+                <li><a href="checkout.html">Cart</a></li>
+
+                <li><a href="checkout.html">Checkout</a></li>
+
+                <li><a href="login.html">Login</a></li>
+
+                <li><a href="signup.html">Signup</a></li>
+
+                <li><a href="contact.html">Contact Us</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 3 -->
+
+        <div class="footer-col">
+
+            <h3>
+                Our Services
+            </h3>
+
+            <ul>
+
+                <li>Online Food Ordering</li>
+
+                <li>Table Reservation</li>
+
+                <li>Family Combo Meals</li>
+
+                <li>Chef Special Menus</li>
+
+                <li>Festival Offers</li>
+
+                <li>Dine-In Experience</li>
+
+                <li>Catering Services</li>
+
+                <li>Party Orders</li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 4 -->
+
+        <div class="footer-col">
+
+            <h3>
+                Follow Us On Instagram
+            </h3>
+
+            <div class="insta-gallery">
+
+                <img src="image/menu1.png">
+
+                <img src="image/menu2.png">
+
+                <img src="image/menu3.png">
+
+                <img src="image/menu4.png">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- FLOATING CHECKOUT -->
+
+<div class="floating-checkout"
+id="floatingCheckout">
+
+    <button id="goCheckoutBtn">
+
+        🛒 Go To Checkout
+
+    </button>
+
+</div>
+
+<!-- JS -->
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
