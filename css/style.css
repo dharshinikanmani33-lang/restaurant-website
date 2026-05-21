@@ -434,6 +434,20 @@ footer{
     font-weight:600;
 }
 
+.logout-btn{
+    background:#e74c3c;
+    color:white;
+    border:2px solid #e74c3c;
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.logout-btn:hover{
+    background:#c0392b;
+}
+
 /* HERO SECTION */
 
 .hero{

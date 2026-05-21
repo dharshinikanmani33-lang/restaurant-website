@@ -16,22 +16,84 @@ function formatPhone(value) {
     return value.replace(/\D/g, "");
 }
 
+function isLoggedIn() {
+    return localStorage.getItem("isLoggedIn") === "true";
+}
+
+function getCurrentPage() {
+    const path = window.location.pathname;
+    const page = path.substring(path.lastIndexOf("/") + 1);
+    return page ? page.toLowerCase() : "index.html";
+}
+
+function redirectTo(targetUrl) {
+    if (!window.location.href.includes(targetUrl)) {
+        window.location.href = targetUrl;
+    }
+}
+
+function updateAuthLinks() {
+    const authLinks = document.querySelectorAll("a[href='login.html'], a[href='signup.html']");
+    authLinks.forEach(function(link) {
+        link.style.display = isLoggedIn() ? "none" : "inline";
+    });
+}
+
+function updateLogoutButton() {
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+        logoutBtn.style.display = isLoggedIn() ? "inline-block" : "none";
+    }
+}
+
+function setupLogoutButton() {
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function() {
+            localStorage.setItem("isLoggedIn", "false");
+            localStorage.removeItem("currentUser");
+            redirectTo("login.html");
+        });
+    }
+}
+
+function enforceAuthentication() {
+    const page = getCurrentPage();
+    const publicPages = ["login.html", "signup.html", "index.html"];
+
+    if (publicPages.includes(page)) {
+        if (isLoggedIn() && page !== "index.html") {
+            redirectTo("home.html");
+        }
+        return;
+    }
+
+    if (!isLoggedIn()) {
+        redirectTo("login.html");
+    }
+}
+
 // ========================================
 // Page startup
 // ========================================
 
 document.addEventListener("DOMContentLoaded", function() {
+    enforceAuthentication();
+    updateAuthLinks();
+    updateLogoutButton();
+    setupLogoutButton();
+
     const createAccountBtn = document.getElementById("createAccountBtn");
     if (createAccountBtn) {
         createAccountBtn.addEventListener("click", function() {
-            window.location.href = "signup.html";
+            redirectTo("signup.html");
         });
     }
 
     const loginNow = document.getElementById("loginNow");
     if (loginNow) {
         loginNow.addEventListener("click", function() {
-            window.location.href = "login.html";
+            redirectTo("login.html");
         });
     }
 
@@ -79,8 +141,10 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             if (isValid) {
+                localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("currentUser", email.value.trim());
                 alert("🎉 Login Successful!");
-                window.location.href = "home.html";
+                redirectTo("home.html");
             }
         });
     }
@@ -144,8 +208,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     password: password.value
                 };
                 localStorage.setItem("user", JSON.stringify(user));
+                localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("currentUser", user.email);
                 alert("🎉 Account Created Successfully!");
-                window.location.href = "login.html";
+                redirectTo("home.html");
             }
         });
     }
@@ -231,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (closePopupBtn) {
         closePopupBtn.addEventListener("click", function() {
             localStorage.removeItem("cart");
-            window.location.href = "home.html";
+            redirectTo("home.html");
         });
     }
 });
