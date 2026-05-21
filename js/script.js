@@ -200,7 +200,7 @@ function buildAccountPopup() {
             emailInput.value = user.email;
             passwordInput.value = user.password;
             hideAccountPopup();
-            loginWithCredentials(user.email, user.password);
+            emailInput.focus();
         });
         accountList.appendChild(entry);
     });
