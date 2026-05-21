@@ -448,6 +448,92 @@ footer{
     background:#c0392b;
 }
 
+.profile-btn{
+    background:#3498db;
+    color:white;
+    border:2px solid #3498db;
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+    margin-left:10px;
+}
+
+.profile-btn:hover{
+    background:#2980b9;
+}
+
+.profile-modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:9999;
+}
+
+.profile-modal-content{
+    background:white;
+    width:100%;
+    max-width:420px;
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.18);
+    position:relative;
+}
+
+.close-profile-btn{
+    position:absolute;
+    top:18px;
+    right:18px;
+    width:36px;
+    height:36px;
+    background:#eee;
+    border:none;
+    border-radius:50%;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.profile-modal-content h2{
+    margin-bottom:18px;
+}
+
+.profile-modal-content p{
+    margin:12px 0;
+    line-height:1.5;
+}
+
+.profile-form{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-top:14px;
+}
+
+.profile-form label{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    font-size:14px;
+    color:#333;
+}
+
+.profile-form input{
+    padding:12px 14px;
+    border:1px solid #d0d0d0;
+    border-radius:10px;
+}
+
+.hidden{
+    display:none;
+}
+
 /* HERO SECTION */
 
 .hero{

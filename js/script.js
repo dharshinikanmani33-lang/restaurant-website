@@ -16,8 +16,197 @@ function formatPhone(value) {
     return value.replace(/\D/g, "");
 }
 
+function getSavedUsers() {
+    const raw = localStorage.getItem("users");
+    if (!raw) {
+        const legacyUser = localStorage.getItem("user");
+        if (legacyUser) {
+            try {
+                const user = JSON.parse(legacyUser);
+                if (user && user.email) {
+                    const users = [user];
+                    localStorage.setItem("users", JSON.stringify(users));
+                    return users;
+                }
+            } catch (error) {
+                return [];
+            }
+        }
+        return [];
+    }
+    try {
+        return JSON.parse(raw) || [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function setSavedUsers(users) {
+    localStorage.setItem("users", JSON.stringify(users));
+}
+
+function getUserByEmail(email) {
+    if (!email) return null;
+    return getSavedUsers().find(function(user) {
+        return user.email.toLowerCase() === email.trim().toLowerCase();
+    }) || null;
+}
+
+function getCurrentUserEmail() {
+    return localStorage.getItem("currentUser") || "";
+}
+
+function getCurrentUser() {
+    return getUserByEmail(getCurrentUserEmail());
+}
+
+function setLoggedInUser(email) {
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("currentUser", email.trim().toLowerCase());
+}
+
+function clearLoggedInUser() {
+    localStorage.setItem("isLoggedIn", "false");
+    localStorage.removeItem("currentUser");
+}
+
 function isLoggedIn() {
     return localStorage.getItem("isLoggedIn") === "true";
+}
+
+function showElement(selector, show) {
+    const el = document.querySelector(selector);
+    if (el) {
+        el.style.display = show ? "" : "none";
+    }
+}
+
+function buildProfileModal() {
+    if (document.getElementById("profileModal")) {
+        return;
+    }
+
+    const container = document.createElement("div");
+    container.id = "profileModal";
+    container.className = "profile-modal";
+    container.innerHTML = `
+        <div class="profile-modal-content">
+            <button id="closeProfileBtn" class="close-profile-btn">&times;</button>
+            <h2>Your Profile</h2>
+            <div id="profileView" class="profile-view">
+                <p><strong>Name:</strong> <span id="profileNameDisplay"></span></p>
+                <p><strong>Email:</strong> <span id="profileEmailDisplay"></span></p>
+                <p><strong>Phone:</strong> <span id="profilePhoneDisplay"></span></p>
+            </div>
+            <button id="editProfileBtn" class="profile-btn">Edit Profile</button>
+            <form id="profileForm" class="profile-form hidden">
+                <label>Name
+                    <input type="text" id="profileNameInput" />
+                </label>
+                <label>Phone
+                    <input type="text" id="profilePhoneInput" />
+                </label>
+                <button type="submit" class="profile-btn">Save</button>
+            </form>
+        </div>
+    `;
+    document.body.appendChild(container);
+
+    container.addEventListener("click", function(event) {
+        if (event.target === container) {
+            closeProfileModal();
+        }
+    });
+
+    document.getElementById("closeProfileBtn").addEventListener("click", closeProfileModal);
+    document.getElementById("editProfileBtn").addEventListener("click", function() {
+        const user = getCurrentUser();
+        if (!user) {
+            alert("No user is currently logged in.");
+            return;
+        }
+        document.getElementById("profileNameInput").value = user.name || "";
+        document.getElementById("profilePhoneInput").value = user.mobile || "";
+        showElement("#profileView", false);
+        showElement("#profileForm", true);
+    });
+
+    document.getElementById("profileForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const nameValue = document.getElementById("profileNameInput").value.trim();
+        const phoneValue = formatPhone(document.getElementById("profilePhoneInput").value);
+
+        if (!nameValue) {
+            alert("Please enter your name.");
+            return;
+        }
+        if (phoneValue.length !== 10) {
+            alert("Please enter a valid 10 digit phone number.");
+            return;
+        }
+
+        const currentUser = getCurrentUser();
+        if (!currentUser) {
+            alert("No active user found.");
+            return;
+        }
+
+        const users = getSavedUsers();
+        const existingUser = users.find(function(user) {
+            return user.email.toLowerCase() === currentUser.email.toLowerCase();
+        });
+        if (existingUser) {
+            existingUser.name = nameValue;
+            existingUser.mobile = phoneValue;
+            setSavedUsers(users);
+            fillProfileView();
+            showElement("#profileForm", false);
+            showElement("#profileView", true);
+            alert("Profile updated successfully.");
+        }
+    });
+}
+
+function fillProfileView() {
+    const user = getCurrentUser();
+    if (!user) {
+        return;
+    }
+    document.getElementById("profileNameDisplay").innerText = user.name || "";
+    document.getElementById("profileEmailDisplay").innerText = user.email || "";
+    document.getElementById("profilePhoneDisplay").innerText = user.mobile || "";
+}
+
+function openProfileModal() {
+    buildProfileModal();
+    fillProfileView();
+    showElement("#profileForm", false);
+    showElement("#profileView", true);
+    const modal = document.getElementById("profileModal");
+    if (modal) {
+        modal.style.display = "flex";
+    }
+}
+
+function closeProfileModal() {
+    const modal = document.getElementById("profileModal");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+function updateProfileButton() {
+    const profileBtn = document.getElementById("profileBtn");
+    if (profileBtn) {
+        profileBtn.style.display = isLoggedIn() ? "inline-block" : "none";
+    }
+}
+
+function updateAuthButtons() {
+    updateAuthLinks();
+    updateLogoutButton();
+    updateProfileButton();
 }
 
 function getCurrentPage() {
@@ -79,9 +268,14 @@ function enforceAuthentication() {
 
 document.addEventListener("DOMContentLoaded", function() {
     enforceAuthentication();
-    updateAuthLinks();
-    updateLogoutButton();
+    updateAuthButtons();
     setupLogoutButton();
+    buildProfileModal();
+
+    const profileBtn = document.getElementById("profileBtn");
+    if (profileBtn) {
+        profileBtn.addEventListener("click", openProfileModal);
+    }
 
     const createAccountBtn = document.getElementById("createAccountBtn");
     if (createAccountBtn) {
@@ -126,13 +320,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 isValid = false;
             }
 
-            const storedUser = JSON.parse(localStorage.getItem("user"));
             if (isValid) {
+                const storedUser = getUserByEmail(email.value);
                 if (!storedUser) {
                     emailError.innerText = "No account found";
-                    isValid = false;
-                } else if (storedUser.email !== email.value.trim()) {
-                    emailError.innerText = "Incorrect email";
                     isValid = false;
                 } else if (storedUser.password !== password.value) {
                     passwordError.innerText = "Incorrect password";
@@ -141,8 +332,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             if (isValid) {
-                localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("currentUser", email.value.trim());
+                setLoggedInUser(email.value);
                 alert("🎉 Login Successful!");
                 redirectTo("home.html");
             }
@@ -201,15 +391,24 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             if (isValid) {
+                const existingUser = getUserByEmail(email.value);
+                if (existingUser) {
+                    emailError.innerText = "An account with this email already exists.";
+                    isValid = false;
+                }
+            }
+
+            if (isValid) {
                 const user = {
                     name: name.value.trim(),
                     mobile: cleanMobile,
-                    email: email.value.trim(),
+                    email: email.value.trim().toLowerCase(),
                     password: password.value
                 };
-                localStorage.setItem("user", JSON.stringify(user));
-                localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("currentUser", user.email);
+                const users = getSavedUsers();
+                users.push(user);
+                setSavedUsers(users);
+                setLoggedInUser(user.email);
                 alert("🎉 Account Created Successfully!");
                 redirectTo("home.html");
             }
