@@ -265,10 +265,8 @@ function loginWithCredentials(emailValue, passwordValue) {
 
     if (isValid) {
         setLoggedInUser(emailValue);
-        setTimeout(function() {
-            alert("🎉 Login Successful!");
-            redirectTo("home.html");
-        }, 100);
+        alert("🎉 Login Successful!");
+        window.location.href = "home.html";
     }
 }
 
@@ -355,9 +353,6 @@ function enforceAuthentication() {
     const publicPages = ["login.html", "signup.html", "index.html"];
 
     if (publicPages.includes(page)) {
-        if (isLoggedIn() && page !== "index.html") {
-            redirectTo("home.html");
-        }
         return;
     }
 
@@ -400,14 +395,22 @@ document.addEventListener("DOMContentLoaded", function() {
     addButtonRedirect("#exploreBtn", "menu.html");
     addButtonRedirect("#goCheckoutBtn", "checkout.html");
 
+    const loginBtn = document.getElementById("loginBtn");
+    if (loginBtn) {
+        loginBtn.addEventListener("click", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("loginEmail");
+            const password = document.getElementById("loginPassword");
+            loginWithCredentials(email.value, password.value);
+        });
+    }
+
     const loginForm = document.getElementById("loginForm");
     if (loginForm) {
         loginForm.addEventListener("submit", function(event) {
             event.preventDefault();
-
             const email = document.getElementById("loginEmail");
             const password = document.getElementById("loginPassword");
-
             loginWithCredentials(email.value, password.value);
         });
     }
